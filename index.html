@@ -1,277 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clipboard Landing Page</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
-  <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    /* ===== CSS RESET ===== */
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    img{max-width:100%;display:block}
-    ul{list-style:none;padding:0;margin:0}
-    a{text-decoration:none;color:inherit}
-
-    /* ===== VARIABLES ===== */
-    :root{
-      --cyan:hsl(171,66%,44%);
-      --blue:hsl(233,100%,69%);
-      --dark-gray:hsl(210,10%,33%);
-      --gray:hsl(201,11%,66%);
-      --font:'Bai Jamjuree',sans-serif;
-    }
-
-    body{
-      font-family:var(--font);
-      font-size:18px;
-      color:var(--dark-gray);
-      text-align:center;
-      line-height:1.6;
-    }
-
-    /* ===== UTILS ===== */
-    .container{
-      width:90%;
-      max-width:1100px;
-      margin-inline:auto;
-    }
-
-    h1,h2,h3{
-      font-weight:600;
-      line-height:1.2;
-    }
-    h1{font-size:2.2rem;margin-bottom:1rem}
-    h2{font-size:1.8rem;margin-bottom:1rem}
-    h3{font-size:1.2rem;margin-bottom:0.75rem}
-
-    p{
-      color:var(--gray);
-      max-width:700px;
-      margin-inline:auto;
-      margin-bottom:2rem;
-    }
-
-    .btn{
-      display:inline-block;
-      padding:1rem 2.5rem;
-      border-radius:30px;
-      font-weight:600;
-      color:#fff;
-      margin:0.5rem;
-      transition:opacity 0.2s ease;
-    }
-    .btn:hover{opacity:0.8}
-    .btn--ios{background:var(--cyan)}
-    .btn--mac{background:var(--blue)}
-
-    /* ===== HEADER ===== */
-    .hero{
-      padding:6rem 0 4rem;
-      background: url('images/bg-header-mobile.png') top center/cover no-repeat;
-    }
-    .hero .logo{margin-bottom:3rem}
-    .hero .buttons{margin-top:2rem}
-
-    /* ===== SNIPPETS ===== */
-    .snippets img{margin:3rem auto}
-    .features{
-      display:flex;
-      flex-direction:column;
-      gap:3rem;
-      margin-top:2rem;
-    }
-    .feature-text h3{margin-bottom:0.5rem}
-
-    /* ===== ACCESS SECTION ===== */
-    .devices img{margin:3rem auto}
-
-    /* ===== SUPERCHARGE ===== */
-    .workflow-cards{
-      display:flex;
-      flex-direction:column;
-      gap:3rem;
-      margin-top:3rem;
-    }
-    .workflow-card img{margin-inline:auto;margin-bottom:1.5rem}
-
-    /* ===== COMPANIES ===== */
-    .companies{
-      display:grid;
-      gap:3rem;
-      justify-content:center;
-      align-items:center;
-      margin:4rem 0;
-    }
-
-    /* ===== DOWNLOAD ===== */
-    .download .buttons{margin-top:2rem;margin-bottom:4rem}
-
-    /* ===== FOOTER ===== */
-    footer{
-      background:#f5f6f8;
-      padding:3rem 1rem;
-    }
-    .footer-inner{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap:2rem;
-    }
-    .footer-links{
-      display:grid;
-      gap:1rem;
-    }
-    .footer-links a{
-      color:var(--dark-gray);
-      font-size:0.95rem;
-    }
-    .socials{
-      display:flex;
-      gap:1.5rem;
-    }
-
-    /* ===== DESKTOP ===== */
-    @media(min-width:768px){
-      h1{font-size:3rem}
-      h2{font-size:2.4rem}
-      .hero{
-        background: url('images/bg-header-desktop.png') top center/contain no-repeat;
-        padding-top:8rem;
-      }
-      .snippets{
-        display:grid;
-        grid-template-columns:1fr 1fr;
-        align-items:center;
-        gap:4rem;
-      }
-      .snippets img{margin:0}
-      .features{align-items:flex-start;text-align:left}
-      .feature-text p{margin-inline:0}
-      .devices img{width:90%}
-      .workflow-cards{
-        flex-direction:row;
-        justify-content:center;
-      }
-      .companies{
-        grid-template-columns:repeat(5,1fr);
-      }
-      footer{
-        text-align:left;
-      }
-      .footer-inner{
-        flex-direction:row;
-        justify-content:space-between;
-      }
-      .footer-links{
-        grid-template-columns:repeat(2,auto);
-        gap:0.5rem 3rem;
-      }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"/>
+  <link rel="stylesheet" href="index.css">
+   <title>Frontend Mentor | Clipboard Landing Page</title>
 </head>
 <body>
-  <!-- ===== HERO ===== -->
-  <header class="hero container">
-    <img src="images/logo.svg" alt="Clipboard logo" class="logo" width="125" height="125" />
-    <h1>A history of everything you copy</h1>
-    <p>Clipboard allows you to track and organize everything you copy. Instantly access your clipboard on all your devices.</p>
-    <div class="buttons">
-      <a href="#" class="btn btn--ios">Download for iOS</a>
-      <a href="#" class="btn btn--mac">Download for Mac</a>
+<div class="picture">
+  <picture>
+  <source media="(min-width: 768px)" srcset="./images/bg-header-desktop.png">
+  <img src="./images/bg-header-mobile.png" alt="">
+</picture>
+</div>
+<section class="showcase">
+    <article>
+      <img src="logo.svg" alt="">
+    </article>
+
+  <article>
+   <h1>
+  A history of everything you copy
+   </h1>
+   <p>Clipboard allows you to track and organize everything you 
+  copy. Instantly access your clipboard on all your devices.</p>
+  <ul>
+    <li><button class="btn-green">Download for iOS</button></li>
+    <li><button class="btn-blue">Download for Mac</button></li>
+  </ul>
+  </article>
+  </section>
+
+  <section class="section-two">
+     <article>
+      <h2>Keep track of your snippets</h2>
+  <p>Clipboard instantly stores any item you copy in the cloud, 
+  meaning you can access your snippets immediately on all your 
+  devices. Our Mac and iOS apps will help you organize everything.</p>
+</article>
+
+<div class="computer">
+    <article>
+      <img src="image-computer.png" alt="">
+    </article>
+
+    <article>
+      <div>
+     <h3>Quick Search</h3>
+  <p>Easily search your snippets by content, category, web address, application, and more.</p>
     </div>
-  </header>
 
-  <!-- ===== SNIPPETS ===== -->
-  <section class="snippets container">
-    <img src="images/image-computer.png" alt="Computer illustration" />
-    <div class="features">
-      <div class="feature-text">
-        <h2>Keep track of your snippets</h2>
-        <p>Clipboard instantly stores any item you copy in the cloud, meaning you can access your snippets immediately on all your devices. Our Mac and iOS apps will help you organize everything.</p>
-      </div>
-      <div class="feature-text">
-        <h3>Quick Search</h3>
-        <p>Easily search your snippets by content, category, web address, application, and more.</p>
-      </div>
-      <div class="feature-text">
-        <h3>iCloud Sync</h3>
-        <p>Instantly saves and syncs snippets across all your devices.</p>
-      </div>
-      <div class="feature-text">
-        <h3>Complete History</h3>
-        <p>Retrieve any snippets from the first moment you started using the app.</p>
-      </div>
+    <div>
+       <h3>iCloud Sync</h3>
+  <p>Instantly saves and syncs snippets across all your devices.</p>
+    </div>
+
+    <div>
+      <h3>Complete History</h3>
+      <p>Retrieve any snippets from the first moment you started using the app.</p>
+    </div>
+      </article>
+  </div> 
+  </section>
+
+  <section class="section-three">
+    <article>
+      <h2>Access Clipboard anywhere</h2>
+      <p>Whether you’re on the go, or at your computer, you can access all your Clipboard 
+  snippets in a few simple clicks.</p>
+
+       <img src="image-devices.png" alt=""> 
+    </article>
+  </section>
+
+  <section class="section-four">
+    <article>
+      <h2>Supercharge your workflow</h2>
+      <p>We’ve got the tools to boost your productivity.</p>
+    </article>
+
+  <div class="cards">
+    <article>
+      <img src="icon-blacklist.svg" alt="">
+      <h3>Create blacklists</h3>
+      <p>Ensure sensitive information never makes its way to your clipboard by excluding certain sources.</p>
+    </article>
+ 
+    <article>
+      <img src="icon-text.svg" alt="">
+      <h3>Plain text snippets</h3>
+      <p>Remove unwanted formatting from copied text for a consistent look.</p>
+    </article>
+
+    <article>
+      <img src="icon-preview.svg" alt="">
+      <h3>Sneak preview</h3>
+      <p>Quick preview of all snippets on your Clipboard for easy access.</p>
+    </article>
     </div>
   </section>
 
-  <!-- ===== ACCESS ===== -->
-  <section class="devices container">
-    <h2>Access Clipboard anywhere</h2>
-    <p>Whether you’re on the go, or at your computer, you can access all your Clipboard snippets in a few simple clicks.</p>
-    <img src="images/image-devices.png" alt="Devices illustration" />
+  <section class="section-five">
+    <ul>
+      <li><img src="logo-google.png" alt=""></li>
+      <li><img src="logo-ibm.png" alt=""></li>
+      <li><img src="logo-microsoft.png" alt=""></li>
+      <li><img src="logo-hp.png" alt=""></li>
+      <li><img src="logo-vector-graphics.png" alt=""></li>
+    </ul>
   </section>
 
-  <!-- ===== SUPERCHARGE ===== -->
-  <section class="workflow container">
-    <h2>Supercharge your workflow</h2>
-    <p>We’ve got the tools to boost your productivity.</p>
-    <div class="workflow-cards">
-      <div class="workflow-card">
-        <img src="images/icon-blacklist.svg" alt="" />
-        <h3>Create blacklists</h3>
-        <p>Ensure sensitive information never makes its way to your clipboard by excluding certain sources.</p>
-      </div>
-      <div class="workflow-card">
-        <img src="images/icon-text.svg" alt="" />
-        <h3>Plain text snippets</h3>
-        <p>Remove unwanted formatting from copied text for a consistent look.</p>
-      </div>
-      <div class="workflow-card">
-        <img src="images/icon-preview.svg" alt="" />
-        <h3>Sneak preview</h3>
-        <p>Quick preview of all snippets on your Clipboard for easy access.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== COMPANIES ===== -->
-  <section class="companies container">
-    <img src="images/logo-google.png" alt="Google" />
-    <img src="images/logo-ibm.png" alt="IBM" />
-    <img src="images/logo-microsoft.png" alt="Microsoft" />
-    <img src="images/logo-hp.png" alt="HP" />
-    <img src="images/logo-vector-graphics.png" alt="Vector Graphics" />
-  </section>
-
-  <!-- ===== DOWNLOAD ===== -->
-  <section class="download container">
+  <section class="section-six">
     <h2>Clipboard for iOS and Mac OS</h2>
-    <p>Available for free on the App Store. Download for Mac or iOS, sync with iCloud and you’re ready to start adding to your clipboard.</p>
-    <div class="buttons">
-      <a href="#" class="btn btn--ios">Download for iOS</a>
-      <a href="#" class="btn btn--mac">Download for Mac</a>
-    </div>
+    <p>Available for free on the App Store. Download for Mac or iOS, sync with iCloud 
+  and you’re ready to start adding to your clipboard.</p>
+    <ul>
+      <li><button class="btn-green">Download for iOS</button></li>
+      <li><button class="btn-blue">Download for Mac</button></li>
+    </ul>
   </section>
 
-  <!-- ===== FOOTER ===== -->
-  <footer>
-    <div class="footer-inner container">
-      <img src="images/logo.svg" alt="Clipboard logo" width="60" height="60" />
-      <nav class="footer-links">
-        <a href="#">FAQs</a>
-        <a href="#">Contact Us</a>
-        <a href="#">Privacy Policy</a> 
-        <a href="#">Press Kit</a>
-        <a href="#">Install Guide</a>
-  <footer>
+  <div class="footer-container">
+ <footer>
+  <article>
+    <img src="logo.svg" alt="">
+  </article>
+
+  <ul>
+    <li><button>FAQs</button></li>
+    <li><button>Contact Us</button></li>
+  </ul>
+
+  <ul>
+    <li><button>Privacy Policy</button></li>
+    <li><button>Press Kit</button></li>
+  </ul>
+
+  <ul>
+    <li><button>Install Guide</button></li>
+  </ul>
+
+  <ul class="social-media">
+    <li><img src="icon-facebook.svg" alt=""></li>
+    <li><img src="icon-twitter.svg" alt=""></li>
+    <li><img src="icon-instagram.svg" alt=""></li>
+  </ul>
+ </footer>
+ </div>
+ 
+ <div>
     <p class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Oreoluwa Badmus</a>.
+      Coded by <a href="https://github.com/OreBadmus/clipboard-landing-page-master.git">Ore Badmus</a>.
     </p>
-  </footer>
+  </div>
 </body>
 </html>
