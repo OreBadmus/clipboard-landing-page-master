@@ -2,19 +2,37 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Bai Jamjuree" sans-serif;
+    font-family: "Bai Jamjuree", sans-serif;
+}
+
+:root {
+    --primary-green: hsl(171, 66%, 44%);
+    --primary-blue: hsl(233, 100%, 69%);
+    --text-dark: hsl(210, 10%, 33%);
+    --text-light: hsl(201, 11%, 66%);
+    --font-main: "Bai Jamjuree", sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
 }
 
 .bai-jamjuree-regular {
-  font-family: "Bai Jamjuree", sans-serif;
+  font-family: var(--font-main);
   font-weight: 400;
   font-style: normal;
 }
 
 .bai-jamjuree-semibold {
-  font-family: "Bai Jamjuree", sans-serif;
+  font-family: var(--font-main);
   font-weight: 600;
   font-style: normal;
+}
+
+html {
+    font-size: 16px;
 }
 
 img {
@@ -32,16 +50,16 @@ body {
 h1,
 h2,
 h3 {
-    color: hsl(210, 10%, 33%);
+    color: var(--text-dark);
 }
 
 p {
-    color: hsl(201, 11%, 66%);
+    color: var(--text-light);
     line-height: 1.8;
 }
 
 .btn-green {
-    background-color: hsl(171, 66%, 44%);
+    background-color: var(--primary-green);
     color: #fff;
     padding: 0.8rem 2rem;
     border-radius: 30px;
@@ -52,8 +70,12 @@ p {
     cursor: pointer;
 }
 
+.btn-green:hover {
+    background-color: hsl(171, 66%, 54%);
+}
+
 .btn-blue {
-    background-color: hsl(233, 100%, 69%);
+    background-color: var(--primary-blue);
     color: #fff;
     padding: 0.8rem 2rem;
     border-radius: 30px;
@@ -62,6 +84,10 @@ p {
     outline: none;
     box-shadow: 4px 4px 10px hsl(233, 100%, 69%, 0.4);
     cursor: pointer;
+}
+
+.btn-blue:hover {
+    background-color: hsl(233, 100%, 74%);
 }
 
 .picture {
@@ -153,20 +179,7 @@ picture img {
     gap: 30px;
     text-align: center;
     justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.section-four .cards article {
-    flex: 1;
-    min-width: 250px;
-}
-
-.section-four .cards article img {
-    height: 30px;
-    width: auto;
-    object-fit: contain;
-    margin-bottom: 20px;
-}
+    flex-wrap: wrap;}
 
 .section-four .cards article {
     display: flex;
@@ -178,6 +191,13 @@ picture img {
     padding: 20px;
     border-radius: 10px;
     height: 100%;
+}
+
+.section-four .cards article img {
+    height: 30px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 20px;
 }
 
 .section-four .cards article p {
