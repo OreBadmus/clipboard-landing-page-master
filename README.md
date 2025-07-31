@@ -96,8 +96,9 @@ footer ul.social-media {
   margin-top: 3rem;
   cursor: pointer;
 }
-
+```
 This snippet allowed me to create a clean and responsive social media footer.
+
 
 ### Continued development
 
@@ -107,7 +108,7 @@ Practice using CSS clamp() and fluid typography
 
 Try integrating a JavaScript clipboard feature to make it interactive
 
-Explore using SASS for better organization and reuse
+Explore using SASS for better organization and reuse.
 
 
 ### Useful resources
@@ -117,14 +118,14 @@ MDN Web Docs – CSS Grid – helped me structure responsive sections cleanly.
 Frontend Mentor Slack Community – great place to see how others tackled similar layouts.
 
 
-## Author
+### Author
 
 - Website – Ore Badmus (https://github.com/OreBadmus)
 - Frontend Mentor – @OreBadmus (https://www.frontendmentor.io/profile/OreBadmus)
 - Twitter - @Badmus065012 (https://x.com/BadmusO65012?t=FW1S_kTqW2OdKzrdG6VZiQ&s=09)
 
 
-## Acknowledgments
+### Acknowledgments
 
 Big thanks to Frontend Mentor for the challenge design and inspiration. This project was completed solo, but inspired by the great community solutions on the platform.
 
